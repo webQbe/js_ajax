@@ -9,6 +9,8 @@
 
   <button id="button">Get Text File</button>
 
+  <div id="text"></div>
+
   <script>
 
     // Create even listener for button
@@ -20,7 +22,6 @@
         var xhr = new XMLHttpRequest();
 
         // Create function to make request
-
         // OPEN - type, url/file name, async or not
         xhr.open('GET', 'sample.txt', true);
 
@@ -55,12 +56,17 @@
             console.log('READYSTATE: ', xhr.readyState);
 
             if(this.status == 200){
-                // status 200 means OK
-
+ 
                 // get responseText from file
-                console.log(this.responseText);
+                // display responseText on webpage
+                document.getElementById('text').innerHTML = this.responseText;
             }
         } 
+
+        // handle xhr.onload errors
+        xhr.onerror = function(){
+            console.log('Request Error...');
+        }
 
         // sending request
         xhr.send();

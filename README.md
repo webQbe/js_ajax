@@ -60,6 +60,12 @@
     - 4 : request finished and response is ready
 
 
+## `xhr.onload`
+
+- You should use `xhr.onerror` with `xhr.onload` to handle errors.
+
+
+
 ### Difference between `xhr.onload` and `xhr.onreadystatechange`
 
 - `xhr.onload` will run only if `readyState` is 4. 
@@ -69,6 +75,7 @@
 
 - Used for loaders
 - `xhr.onprogress` has `readyState` 3 (processing request).
+
 
 
 
