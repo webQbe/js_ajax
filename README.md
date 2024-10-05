@@ -63,6 +63,12 @@
 ### Difference between `xhr.onload` and `xhr.onreadystatechange`
 
 - `xhr.onload` will run only if `readyState` is 4. 
+- `xhr.onreadystatechange` has 2, 3 &  4 `readyState`s
+
+### Onprogress
+
+- Used for loaders
+- `xhr.onprogress` has `readyState` 3 (processing request).
 
 
 

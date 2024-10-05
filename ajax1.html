@@ -27,6 +27,16 @@
         // checking readyState
         console.log('READYSTATE: ', xhr.readyState);
 
+           // onprogress (optional)
+           // used for loaders
+           xhr.onprogress = function(){
+
+            // checking readyState
+            console.log('READYSTATE: ', xhr.readyState);
+
+           }
+
+
 /*         xhr.onreadystatechange = function(){
 
             // checking readyState
