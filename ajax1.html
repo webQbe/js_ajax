@@ -23,7 +23,7 @@
 
         // Create function to make request
         // OPEN - type, url/file name, async or not
-        xhr.open('GET', 'sample.txt', true);
+        xhr.open('GET', 'sample2.txt', true);
 
         // checking readyState
         console.log('READYSTATE: ', xhr.readyState);
@@ -60,6 +60,8 @@
                 // get responseText from file
                 // display responseText on webpage
                 document.getElementById('text').innerHTML = this.responseText;
+            } else {
+                document.getElementById('text').innerHTML = '<h4>Not Found!</h4>';
             }
         } 
 
