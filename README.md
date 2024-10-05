@@ -60,4 +60,9 @@
     - 4 : request finished and response is ready
 
 
+### Difference between `xhr.onload` and `xhr.onreadystatechange`
+
+- `xhr.onload` will run only if `readyState` is 4. 
+
+
 

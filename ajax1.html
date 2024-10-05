@@ -24,7 +24,13 @@
         // OPEN - type, url/file name, async or not
         xhr.open('GET', 'sample.txt', true);
 
+        // checking readyState
+        console.log('READYSTATE: ', xhr.readyState);
+
         xhr.onreadystatechange = function(){
+            
+            // checking readyState
+            console.log('READYSTATE: ', xhr.readyState);
 
             if(this.readyState == 4 && this.status == 200){
                 // if request finished and response is ready
