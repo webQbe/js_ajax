@@ -27,8 +27,8 @@
         // checking readyState
         console.log('READYSTATE: ', xhr.readyState);
 
-        xhr.onreadystatechange = function(){
-            
+/*         xhr.onreadystatechange = function(){
+
             // checking readyState
             console.log('READYSTATE: ', xhr.readyState);
 
@@ -37,9 +37,12 @@
                 // & if status is OK
                 console.log(this.responseText);
             }
-        }
+        } */
 
-      /*   xhr.onload = function(){
+           xhr.onload = function(){
+
+            // checking readyState
+            console.log('READYSTATE: ', xhr.readyState);
 
             if(this.status == 200){
                 // status 200 means OK
@@ -47,7 +50,7 @@
                 // get responseText from file
                 console.log(this.responseText);
             }
-        } */
+        } 
 
         // sending request
         xhr.send();
