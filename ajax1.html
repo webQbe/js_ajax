@@ -19,8 +19,24 @@
         // Create XHR Object
         var xhr = new XMLHttpRequest();
 
-        // see XHR object
-        console.log(xhr);
+        // Create function to make request
+
+        // OPEN - type, url/file name, async or not
+        xhr.open('GET', 'sample.txt', true);
+
+
+        xhr.onload = function(){
+
+            if(this.status == 200){
+                // status 200 means OK
+
+                // get responseText from file
+                console.log(this.responseText);
+            }
+        }
+
+        // sending request
+        xhr.send();
 
     }
 
