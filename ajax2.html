@@ -12,13 +12,18 @@
     <h1>User</h1>
     <div id="user"></div>
     <h1>Users</h1>
-    <div id="user"></div>
+    <div id="users"></div>
 
     <script>
+        // Get User button
         document.getElementById('button1').addEventListener('click', loadUser);
 
-        function loadUser(){
+        // Get Users button
+        document.getElementById('button2').addEventListener('click', loadUsers);
 
+        
+        function loadUser(){
+            // fetch data asynchronously
             var xhr = new XMLHttpRequest();
             xhr.open('GET', 'user.json', true);
 
@@ -40,6 +45,42 @@
 
                     // select div#user
                     document.getElementById('user').innerHTML = output;
+
+                }
+            }
+
+            xhr.send();
+        }
+
+        function loadUsers(){
+
+            var xhr = new XMLHttpRequest();
+            // get users.json file
+            xhr.open('GET', 'users.json', true);
+
+            xhr.onload = function(){
+
+                if(this.status == 200){
+
+                    // create users variable
+                    var users = JSON.parse(this.responseText);
+
+                    var output = '';
+
+                    // loop through users array
+
+                    for(var i in users){
+
+                        // get current user data
+                        output += '<ul>' + 
+                                '<li>ID: ' + users[i].id + '</li>' +
+                                '<li>Name: ' + users[i].name + '</li>' +
+                                '<li>Email: ' + users[i].email + '</li>' +
+                               '</ul>';
+                    }
+
+                    // select div#users
+                    document.getElementById('users').innerHTML = output;
 
                 }
             }
