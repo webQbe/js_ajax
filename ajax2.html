@@ -25,7 +25,13 @@
             xhr.onload = function(){
 
                 if(this.status == 200){
-                    console.log(this.responseText);
+
+                    // create user variable
+                    var user = JSON.parse(this.responseText);
+
+                    // get name 
+                    console.log(user.name); 
+
                 }
             }
 
