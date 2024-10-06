@@ -29,8 +29,17 @@
                     // create user variable
                     var user = JSON.parse(this.responseText);
 
-                    // get name 
-                    console.log(user.name); 
+                    var output = '';
+
+                    // += append to output 
+                    output += '<ul>' + 
+                                '<li>ID: ' + user.id + '</li>' +
+                                '<li>Name: ' + user.name + '</li>' +
+                                '<li>Email: ' + user.email + '</li>' +
+                               '</ul>';
+
+                    // select div#user
+                    document.getElementById('user').innerHTML = output;
 
                 }
             }
