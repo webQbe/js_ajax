@@ -7,16 +7,41 @@
 </head>
 <body>
     <button id="button">Get Name</button>
+    <hr>
+
+    
+    <h1>REGULAR HTTP GET FORM</h1>
+    <form method="GET" action="process.php">
+        <input type="text" name="name">
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+
+    <h1>AJAX GET FORM</h1>
+    <form id="getForm">
+        <input type="text" name="name" id="name1">
+        <input type="submit" value="Submit">
+    </form>
+
 
     <script>
         document.getElementById('button').addEventListener('click', getName);
 
-        function getName(){
+        document.getElementById('getForm').addEventListener('submit', getName);
 
-            // pass a value to php file
-            // get processed data from php
+        function getName(e){
+
+            // stop default form submission  
+            e.preventDefault();
+
+            // get value from text input
+            var name = document.getElementById('name1').value;
+
+            // pass name to process.php
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'process.php?name=Brad', true)
+            xhr.open('GET', 'process.php?name='+name, true)
 
             xhr.onload = function(){
 
