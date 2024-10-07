@@ -9,7 +9,7 @@
     <button id="button">Get Name</button>
     <hr>
 
-    
+
     <h1>REGULAR HTTP GET FORM</h1>
     <form method="GET" action="process.php">
         <input type="text" name="name">
@@ -26,11 +26,32 @@
     </form>
 
 
+
+    <h1>REGULAR POST FORM</h1>
+    <form method="POST" action="process.php">
+        <input type="text" name="name">
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <h1>AJAX POST FORM</h1>
+    <form id="postForm">
+        <input type="text" name="name" id="name2">
+        <input type="submit" value="Submit">
+    </form>
+
+
     <script>
         document.getElementById('button').addEventListener('click', getName);
 
+        // Event Listener for GET form
         document.getElementById('getForm').addEventListener('submit', getName);
 
+        // Event Listener for POST form
+        document.getElementById('postForm').addEventListener('submit', postName);
+
+
+        // Function for GET form
         function getName(e){
 
             // stop default form submission  
@@ -51,6 +72,33 @@
 
             xhr.send();
         }
-    </script>
+   
+   
+        // Function for POST form
+        function postName(e){
+                e.preventDefault();
+
+                var name = document.getElementById('name2').value;
+
+                // define parameter for xhr.send()
+                var params = 'name='+name;
+
+                var xhr = new XMLHttpRequest();
+                // for POST do not attach request to URL
+                xhr.open('POST', 'process.php', true);
+
+                // set request content type
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+
+                xhr.onload = function(){
+
+                    console.log(this.responseText);
+
+                }
+
+                xhr.send(params);
+
+        }
+   </script>
 </body>
 </html>
