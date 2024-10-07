@@ -27,12 +27,32 @@
 
                     var users = JSON.parse(this.responseText);
 
-                    console.log(users);
+                    // Output to browser
+
+                    var output = '';
+
+                    // loop through users array 
+                    // append each user's avatar, id, login to output
+                    for(var i in users){
+
+                        output += 
+                            '<div class="user">' + 
+                            '<img src="' + users[i].avatar_url + '" width="70" height="70">'
+                            + 
+                            '<ul>' +
+                                '<li>ID: ' + users[i].id + '</li>' +
+                                '<li>Login: ' + users[i].login + '</li>' +
+                            '</ul>' +
+                            '</div>';
+
+                    }
+
+                    document.getElementById('users').innerHTML = output;
 
                 }
 
             }
-            
+
             // This needs to be outside of the `onload` function
             xhr.send();
 
