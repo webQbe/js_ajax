@@ -13,9 +13,10 @@
 
         function getName(){
 
-            // get data from php
+            // pass a value to php file
+            // get processed data from php
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'process.php', true)
+            xhr.open('GET', 'process.php?name=Brad', true)
 
             xhr.onload = function(){
 
