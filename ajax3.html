@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 3 - External API</title>
+</head>
+<body>
+    <button id="button">Load GitHub Users</button>
+    <br><br>
+    <h1>GitHub Users</h1>
+    <div id="users"></div>
+
+    <script>
+        document.getElementById('button').addEventListener('click', loadUsers);
+
+        // load github users
+        function loadUsers(){
+
+            var xhr = new XMLHttpRequest();
+            // add api url
+            xhr.open('GET', 'https://api.github.com/users', true);
+
+            xhr.onload = function(){
+
+                if(this.status == 200){
+
+                    var users = JSON.parse(this.responseText);
+
+                    console.log(users);
+
+                }
+
+            }
+            
+            // This needs to be outside of the `onload` function
+            xhr.send();
+
+
+        }
+    </script>
+</body>
+</html>
