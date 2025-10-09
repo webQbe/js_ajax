@@ -1,5 +1,7 @@
 # JavaScript AJAX tutorial
+This repo is an adaptation of [AJAX Crash Course (Vanilla JavaScript)](https://www.youtube.com/watch?v=82hnvUYY6QA&list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX&index=12&pp=iAQB) by Traversy Media. 
 
+I followed the tutorial to learn followings:
 - AJAX is an acronym for Asynchronous JavaScript & XML.
 - AJAX is not a language, framework or library.
 - A set of web technologies to send & receive data asynchronously from a client to a server.
@@ -9,7 +11,7 @@
 - Most external APIs use JSON not XML, or both.
 - AJAX can also work with plain text.
 
-## How AJAX work?
+### How AJAX work?
 
 - A client makes a common request to a server by clicking a link.
 - The server sends a common response back with headers and webpage.
@@ -20,7 +22,7 @@
 - Finally, the AJAX Engine processes the response from the server and forwards it to the client as a HTML Response.
 
  
-## XmlHttpRequest(XHR) Object
+### XmlHttpRequest(XHR) Object
 
 - XmlHttpRequest(XHR) is an API, an object with properties and methods.
 - All modern browsers have this API in their JS environments. 
@@ -29,7 +31,7 @@
 - Can work with data other than XML (JSON, plain text)
 
 
-## Libraries and Other Methods
+### Libraries and Other Methods
 
 - There and different ways to make AJAX calls. 
 - Before jump into libraries, you should know how to make an actual request using XmlHttpRequest(XHR) Object.     
@@ -43,7 +45,7 @@
 
 
 
-## HTTP Statuses
+### HTTP Statuses
 
     - 200 : "OK"
     - 403 : "Forbidden"
@@ -51,7 +53,7 @@
 
 
 
-## readyState Values
+### readyState Values
 
     - 0 : request not initialized
     - 1 : server connection established
@@ -60,7 +62,7 @@
     - 4 : request finished and response is ready
 
 
-## `xhr.onload`
+### `xhr.onload`
 
 - You should use `xhr.onerror` with `xhr.onload` to handle errors.
 
@@ -75,6 +77,12 @@
 
 - Used for loaders
 - `xhr.onprogress` has `readyState` 3 (processing request).
+
+## Credits
+Original tutorial: [AJAX Crash Course (Vanilla JavaScript)](https://www.youtube.com/watch?v=82hnvUYY6QA&list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX&index=12&pp=iAQB) — Traversy Media.
+
+## License
+MIT License
 
 
 
